@@ -38,11 +38,11 @@ List * createList() {
 
 void * firstList(List * list) { 
     *list->current = *list->head;
-    return NULL;
+    return list->tail;
 }
 
 void * nextList(List * list) {
-    *list->current=*list->head;
+
     return NULL;
 }
 
