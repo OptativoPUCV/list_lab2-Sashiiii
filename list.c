@@ -59,7 +59,7 @@ void * lastList(List * list) {
     while(list->current->next!=NULL){
       list->current = list->current->next;
       }
-    return (void*)list->current;
+    return (void*)list->current->data;
 }
 
 void * prevList(List * list) {
