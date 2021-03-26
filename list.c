@@ -129,19 +129,19 @@ void * popCurrent(List * list) {
   Node* Sig = list->current->next;
     if(list->tail==list->current){
       list->current=list->current->prev;
-      free(list->current->next);
+      //free(list->current->next);
       list->current->next = NULL;
       list->tail = list->current;
     }else if(list->head==list->current){
       list->current=list->current->next;
-      free(list->current->prev);
+     // free(list->current->prev);
       list->current->prev = NULL;
       list->head = list->current;
     }
     else{
       list->current->prev->next = list->current->next;
       list->current->next->prev = list->current->prev;
-      free(list->current);
+      //free(list->current);
       list->current=Sig;
     }
   
