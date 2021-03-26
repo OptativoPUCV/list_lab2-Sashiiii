@@ -61,7 +61,7 @@ void * lastList(List * list) {
       }
     return (void*)list->current->data;
 }
-//-----> NO SE QUE DEBE HACER LA FUNCION CUANDO CURRENT ES NULL :C
+//-----> NO SE QUE DEBE HACER LA FUNCION LAST CUANDO CURRENT ES NULL :C
 void * prevList(List * list) {
   if(list->current!=list->head){
     list->current = list->current->prev;
@@ -76,9 +76,11 @@ void pushFront(List * list, const void * data) {
     list->head=createNode(data);
     list->head->next=aux;
     list->head->next->prev=list->current;
+//me falta cambiar tail
   }
   else{
     list->head=createNode(data);
+    list->tail=list->head;
   }
 }
 
