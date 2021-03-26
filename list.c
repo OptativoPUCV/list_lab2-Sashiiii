@@ -136,7 +136,18 @@ void * popCurrent(List * list) {
       list->head=NULL;
     }
     else {
-
+        if(list->tail==list->current){
+          list->current->prev->next=NULL;
+          list->tail=list->current->prev;
+          list->current->prev=NULL;
+          free(list->current);
+          list->current=NULL;
+          list->tail=NULL;
+        }else{
+          list->current->prev->next=list->current->next;
+          list->current->next->prev=list->current->prev;
+          free(list->current);
+        }
     }
     return (void*) Aux->data;
 }
