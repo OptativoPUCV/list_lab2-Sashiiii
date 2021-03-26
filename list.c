@@ -68,11 +68,15 @@ void * lastList(List * list) {
 void * prevList(List * list) {
   if(list->current!=list->head){
     list->current = list->current->prev;
+    return (void*) list->current->data;
   }
-  else{
+  if(list->current==list->head){
     return NULL;
   }
-    return (void*) list->current->data; 
+  if(list->current==NULL){
+    return NULL;
+  }
+  return NULL;
 }
 
 //FUNCIONA
