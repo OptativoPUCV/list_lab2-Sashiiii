@@ -116,7 +116,6 @@ void pushCurrent(List * list, const void * data) {
     SigN->next=SigOr;
     }
   }
-  
 }
 
 void * popFront(List * list) {
@@ -130,7 +129,16 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-    return NULL;
+    Node* Aux = list->current;
+    if(list->current==list->head&&list->current==list->head){
+      free(list->current);
+      list->tail=NULL;
+      list->head=NULL;
+    }
+    else {
+
+    }
+    return (void*) Aux->data;
 }
 
 void cleanList(List * list) {
