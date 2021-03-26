@@ -48,9 +48,12 @@ void * nextList(List * list) {
     list->current = list->current->next;
     return (void*)(list->current->data);
 }
-
+//-------------> HASTA AQUI ESTA DE PANA <-------------//
 void * lastList(List * list) {
-    return NULL;
+    while(list->current->next!=NULL){
+      list->current = list->current->next;
+    }
+    return (void*)list->current;
 }
 
 void * prevList(List * list) {
