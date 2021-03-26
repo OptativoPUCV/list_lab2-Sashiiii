@@ -106,15 +106,17 @@ void pushCurrent(List * list, const void * data) {
     list->current->next=createNode(data);
     list->current->next->prev=list->current;
     list->tail=list->current->next;
-  }
-  if(list->current->next!=NULL){
+  }else{
+    if(list->current->next!=NULL){
     SigOr = list->current->next;
     SigN = createNode(data);
     list->current->next = SigN;
     list->current->next->prev = list->current;
     SigOr->prev=list->current->next;
     SigN->next=SigOr;
+    }
   }
+  
 }
 
 void * popFront(List * list) {
