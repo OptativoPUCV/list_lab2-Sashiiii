@@ -50,6 +50,7 @@ void * nextList(List * list) {
 }
 //-------------> HASTA AQUI ESTA DE PANA <-------------//
 void * lastList(List * list) {
+    if(list->current==NULL || list->current->next==NULL) return NULL;
     while(list->current->next!=NULL){
       list->current = list->current->next;
     }
