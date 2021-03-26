@@ -69,6 +69,9 @@ void * prevList(List * list) {
   if(list->current!=list->head){
     list->current = list->current->prev;
   }
+  else{
+    return NULL;
+  }
     return (void*) list->current->data; 
 }
 
