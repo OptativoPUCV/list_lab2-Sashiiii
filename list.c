@@ -53,6 +53,7 @@ void * nextList(List * list) {
 //-----> NO SE QUE DEBE HACER LA FUNCION LAST CUANDO CURRENT ES NULL :C
 void * lastList(List * list) {
     if(list->current==NULL){
+      list->current=list->tail;
       return (void*)list->tail->data;
       }
     if(list->current->next==NULL){ 
