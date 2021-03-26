@@ -133,10 +133,13 @@ void * popCurrent(List * list) {
   if(list->current==list->head){
     list->head=list->current->next; 
     list->head->prev=NULL;
+    list->current->next=NULL;
     }
-  if(list->current==list->tail) {
+    if(list->current==list->tail) {
     list->tail=list->current->prev;
+    list->tail=NULL;
     }
+
     free(list->current);
   return (void*)aux->data;
 }
