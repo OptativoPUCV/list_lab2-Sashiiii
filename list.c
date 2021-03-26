@@ -66,15 +66,15 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-  if(list->current!=list->head){
-    list->current = list->current->prev;
-    return (void*) list->current->data;
+  if(list->current==NULL){
+    return NULL;
   }
   if(list->current==list->head){
     return NULL;
   }
-  if(list->current==NULL){
-    return NULL;
+  if(list->current!=list->head){
+    list->current = list->current->prev;
+    return (void*) list->current->data;
   }
   return NULL;
 }
