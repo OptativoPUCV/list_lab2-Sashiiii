@@ -126,6 +126,7 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   Node* aux = list->current;
+    if(list->current==NULL) return NULL;
   //Node* Sig = list->current->next;
     if(list->tail==list->current){
       list->current=list->current->prev;
